@@ -6,17 +6,17 @@
 
 import os
 import json
-from py2neo import Graph,Node
+from py2neo import Graph, Node
 
 class MedicalGraph:
     def __init__(self):
-        cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
-        self.data_path = os.path.join(cur_dir, 'data/medical.json')
+        cur_dir = '\\'.join(os.path.abspath(__file__).split('\\')[:-1])
+        self.data_path = os.path.join(cur_dir, 'data\\medical-traditional.json')
         self.g = Graph(
             host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
             http_port=7474,  # neo4j 服务器监听的端口号
-            user="lhy",  # 数据库user name，如果没有更改过，应该是neo4j
-            password="lhy123")
+            user="neo4j",  # 数据库user name，如果没有更改过，应该是neo4j
+            password="ns101817")
 
     '''读取文件'''
     def read_nodes(self):
@@ -28,7 +28,6 @@ class MedicalGraph:
         producers = [] #药品大类
         diseases = [] #疾病
         symptoms = []#症状
-
         disease_infos = []#疾病信息
 
         # 构建节点实体关系
@@ -45,9 +44,9 @@ class MedicalGraph:
         rels_acompany = [] # 疾病并发关系
         rels_category = [] #　疾病与科室之间的关系
 
-
         count = 0
-        for data in open(self.data_path):
+        for data in open(self.data_path,encoding='UTF-8'):
+            # print(data)
             disease_dict = {}
             count += 1
             print(count)
@@ -263,8 +262,8 @@ class MedicalGraph:
 
         return
 
-
-
 if __name__ == '__main__':
     handler = MedicalGraph()
+    handler.create_graphnodes()
+    handler.create_graphrels()
     # handler.export_data()

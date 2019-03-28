@@ -18,10 +18,12 @@ class ChatBotGraph:
     def chat_main(self, sent):
         answer = '您好，我是小勇医药智能助理，希望可以帮到您。如果没答上来，可联系https://liuhuanyong.github.io/。祝您身体棒棒！'
         res_classify = self.classifier.classify(sent)
+        # print(res_classify)
         if not res_classify:
             return answer
         res_sql = self.parser.parser_main(res_classify)
         final_answers = self.searcher.search_main(res_sql)
+        # print(final_answers)
         if not final_answers:
             return answer
         else:
