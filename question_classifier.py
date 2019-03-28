@@ -52,7 +52,6 @@ class QuestionClassifier:
         self.belong_qwds = ['属于什么科', '属于', '什么科', '科室']
         self.cure_qwds = ['治疗什么', '治啥', '治疗啥', '医治啥', '治愈啥', '主治啥', '主治什么', '有什么用', '有何用', '用处', '用途',
                           '有什么好处', '有什么益处', '有何益处', '用来', '用来做啥', '用来作甚', '需要', '要']
-
         print('model init finished ......')
 
         return
