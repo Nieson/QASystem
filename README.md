@@ -182,10 +182,3 @@ disease_desc	疾病描述	糖尿病
 3、本项目以neo4j作为存储，并基于传统规则的方式完成了知识问答，并最终以cypher查询语句作为问答搜索sql，支持了问答服务。
 4、本项目可以快速部署，数据已经放在data/medical.json当中，本项目的数据，如侵犯相关单位权益，请联系我删除。本数据请勿商用，以免引起不必要的纠纷。在本项目中的部署上，可以遵循项目运行步骤，完成数据库搭建，并提供搜索服务。
 5、本项目还有不足：关于疾病的起因、预防等，实际返回的是一大段文字，这里其实可以引入事件抽取的概念，进一步将原因结构化表示出来。这个可以后面进行尝试。
-
-If any question about the project or me ,see https://liuhuanyong.github.io/
-
-如有自然语言处理、知识图谱、事理图谱、社会计算、语言资源建设等问题或合作，可联系我：
-1、我的github项目介绍：https://liuhuanyong.github.io
-2、我的csdn博客：https://blog.csdn.net/lhy2014
-3、about me:刘焕勇，中国科学院软件研究所，lhy_in_blcu@126.com
